@@ -19,6 +19,7 @@ public class EmpresaHasCnae implements Serializable {
 	@JoinColumn(name = "cnae_id")
 	private Cnae22 cnae;
 	private Boolean cnaePrincipal;
+	private boolean ativo = true;
 
 	public EmpresaHasCnae() {
 	}

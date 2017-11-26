@@ -1,6 +1,7 @@
 package backend.sec.padrao.model.entidades;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.GeneratedValue;
@@ -17,7 +18,7 @@ public class Empresa implements Serializable {
 	private String razaoSocial;
 	private String nomeFantasia;
 	@OneToMany(mappedBy = "empresa")
-	private List<EmpresaHasCnae> listaEmpresaHasCnae;
+	private List<EmpresaHasCnae> listaEmpresaHasCnae = new ArrayList<>();
 	private String cnpj;
 	private boolean ativo = true;
 

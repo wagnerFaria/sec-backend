@@ -1,6 +1,7 @@
 package backend.sec.fco.model.entidades;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -25,7 +26,7 @@ public class ItemFinanciado implements Serializable {
 	private TipoItem tipoItens;
 
 	@OneToMany(mappedBy = "itemFinanciado")
-	private List<FinanciamentoHasItemFinanciado> listaFinanciamentoHasItemFinanciado;
+	private List<FinanciamentoHasItemFinanciado> listaFinanciamentoHasItemFinanciado = new ArrayList<>();
 
 	public ItemFinanciado() {
 	}

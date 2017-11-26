@@ -1,6 +1,7 @@
 package backend.sec.padrao.model.entidades;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -27,7 +28,7 @@ public class Cnae22 implements Serializable {
 	private String codSubclasse;
 	private String descSubclasse;
 	@OneToMany(mappedBy = "cnae")
-	private List<EmpresaHasCnae> listaEmpresaHasCnae;
+	private List<EmpresaHasCnae> listaEmpresaHasCnae = new ArrayList<>();
 
 	public Cnae22() {
 		super();

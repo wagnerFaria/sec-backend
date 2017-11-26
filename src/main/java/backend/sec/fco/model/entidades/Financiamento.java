@@ -2,6 +2,7 @@ package backend.sec.fco.model.entidades;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -54,7 +55,7 @@ public class Financiamento implements Serializable {
 	private String enquadramento;
 	// O campo abaixo tb serve apara identificar os itens aprovados
 	@OneToMany(mappedBy = "financiamento")
-	private List<FinanciamentoHasItemFinanciado> listaFinanciamentoHasItemFinanciado;
+	private List<FinanciamentoHasItemFinanciado> listaFinanciamentoHasItemFinanciado = new ArrayList<>();
 	@Lob
 	private String objetoDoProjeto;
 	// Dados do Financiamento - FIM
