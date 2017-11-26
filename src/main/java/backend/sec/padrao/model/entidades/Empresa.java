@@ -19,6 +19,7 @@ public class Empresa implements Serializable {
 	@OneToMany(mappedBy = "empresa")
 	private List<EmpresaHasCnae> listaEmpresaHasCnae;
 	private String cnpj;
+	private boolean ativo = true;
 
 	public Empresa() {
 	}
@@ -68,6 +69,14 @@ public class Empresa implements Serializable {
 
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
+	}
+
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
 	}
 
 	@Override
