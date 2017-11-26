@@ -50,6 +50,8 @@ public class Financiamento implements Serializable {
 	private Date dataProtocoloProjeto;
 	private BigDecimal valorProjeto;
 	private BigDecimal valorSolicitado;
+	@ManyToOne
+	@JoinColumn(name = "local_investimento_id")
 	private Localidade localInvestimento;
 	private BigDecimal faturamentoOuValorBruto;
 	private String enquadramento;
@@ -65,9 +67,15 @@ public class Financiamento implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date dataAnaliseCartaConsulta;
 	private String numeroReuniao;
+	@ManyToOne
+	@JoinColumn(name = "local_aprovacao_id")
 	private Localidade localAprovacao;
+	@ManyToOne
+	@JoinColumn(name = "status_analise_id")
 	private StatusAnalise statusAnalise;
 	private BigDecimal valorAprovado;
+	@ManyToOne
+	@JoinColumn(name = "local_reuniao_id")
 	private Localidade localReuniao;
 	@Lob
 	private String parecer;
@@ -79,6 +87,8 @@ public class Financiamento implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date dataContratacao;
 	private BigDecimal valorContratado;
+	@ManyToOne
+	@JoinColumn(name = "fonte_recurso_id")
 	private FonteRecurso fonteRecurso;
 	private Integer qtdEmpregoDireto;
 	private Integer qtdEmpregoIndireto;

@@ -3,20 +3,22 @@ package backend.sec.padrao.model.entidades;
 import java.io.Serializable;
 
 import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+@Entity
 public class EmpresaHasCnae implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
 	private EmpresaHasCnaePK empresaHasCnaePK;
-	@ManyToOne
-	@JoinColumn(name = "empresa_id")
+	@JoinColumn(name = "empresa_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+	@ManyToOne(optional = false)
 	private Empresa empresa;
-	@ManyToOne
-	@JoinColumn(name = "cnae_id")
+	@JoinColumn(name = "cnae_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+	@ManyToOne(optional = false)
 	private Cnae22 cnae;
 	private Boolean cnaePrincipal;
 	private boolean ativo = true;
