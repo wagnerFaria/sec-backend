@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,17 +30,17 @@ public class Financiamento implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	// Cadastro de Financiamento INICIO
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "tipo_fco_id")
 	private TipoFco tipoFco;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "agencia_id")
 	private Agencia agencia;
 	@Temporal(TemporalType.DATE)
 	private Date dataProtocoloAgencia;
 	private String numeroProcesso;
 	private String programa;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "empresa_proponente_id")
 	private Empresa empresaProponente;
 	// Cadastro de Financiamento FIM
@@ -50,7 +51,7 @@ public class Financiamento implements Serializable {
 	private Date dataProtocoloProjeto;
 	private BigDecimal valorProjeto;
 	private BigDecimal valorSolicitado;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "local_investimento_id")
 	private Localidade localInvestimento;
 	private BigDecimal faturamentoOuValorBruto;
@@ -67,14 +68,14 @@ public class Financiamento implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date dataAnaliseCartaConsulta;
 	private String numeroReuniao;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "local_aprovacao_id")
 	private Localidade localAprovacao;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "status_analise_id")
 	private StatusAnalise statusAnalise;
 	private BigDecimal valorAprovado;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "local_reuniao_id")
 	private Localidade localReuniao;
 	@Lob
@@ -87,7 +88,7 @@ public class Financiamento implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date dataContratacao;
 	private BigDecimal valorContratado;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "fonte_recurso_id")
 	private FonteRecurso fonteRecurso;
 	private Integer qtdEmpregoDireto;

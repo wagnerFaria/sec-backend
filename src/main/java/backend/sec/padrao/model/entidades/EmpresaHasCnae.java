@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
@@ -15,10 +16,10 @@ public class EmpresaHasCnae implements Serializable {
 	@EmbeddedId
 	private EmpresaHasCnaePK empresaHasCnaePK;
 	@JoinColumn(name = "empresa_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	private Empresa empresa;
 	@JoinColumn(name = "cnae_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	private Cnae22 cnae;
 	private Boolean cnaePrincipal;
 	private boolean ativo = true;

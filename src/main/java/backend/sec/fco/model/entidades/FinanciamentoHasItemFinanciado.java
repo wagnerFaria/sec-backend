@@ -3,6 +3,7 @@ package backend.sec.fco.model.entidades;
 import java.io.Serializable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
@@ -14,10 +15,10 @@ public class FinanciamentoHasItemFinanciado implements Serializable {
 	@EmbeddedId
 	private FinanciamentoHasItemFinanciadoPK financiamentoHasItemFinanciadoPK;
 	@JoinColumn(name = "financiamento_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	private Financiamento financiamento;
 	@JoinColumn(name = "itemFinanciado_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	private ItemFinanciado itemFinanciado;
 	private Boolean aprovado = false;
 

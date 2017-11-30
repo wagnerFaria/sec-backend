@@ -2,6 +2,7 @@ package backend.sec.fco.model.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,7 +24,7 @@ public class Localidade {
 	@Column(nullable = true)
 	private String complemento;
 	private String descricao;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "cidade_id")
 	private Cidade cidade;
 

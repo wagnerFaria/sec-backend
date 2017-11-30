@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,10 +25,10 @@ public class Agencia implements Serializable {
 	private Long id;
 	private String numeroAgencia;
 	private String descricao;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "banco_id")
 	private Banco banco;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "cidade_id")
 	private Cidade cidade;
 	@OneToMany(mappedBy = "agencia")
