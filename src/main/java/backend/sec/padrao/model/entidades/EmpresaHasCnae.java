@@ -65,6 +65,14 @@ public class EmpresaHasCnae implements Serializable {
 		this.cnaePrincipal = cnaePrincipal;
 	}
 
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

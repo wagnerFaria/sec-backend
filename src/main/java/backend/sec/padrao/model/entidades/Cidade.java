@@ -27,11 +27,12 @@ public class Cidade implements Serializable {
 		super();
 	}
 
-	public Cidade(Long id, String nome, Estado estado) {
+	public Cidade(Long id, String nome, Estado estado, String codigoIbge) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.estado = estado;
+		this.codigoIbge = codigoIbge;
 	}
 
 	public Long getId() {
@@ -56,6 +57,15 @@ public class Cidade implements Serializable {
 
 	public void setEstado(Estado estado) {
 		this.estado = estado;
+
+	}
+
+	public String getCodigoIbge() {
+		return codigoIbge;
+	}
+
+	public void setCodigoIbge(String codigoIbge) {
+		this.codigoIbge = codigoIbge;
 	}
 
 	@Override
