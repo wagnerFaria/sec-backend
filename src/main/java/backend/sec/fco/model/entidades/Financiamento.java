@@ -15,6 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -22,6 +23,7 @@ import backend.sec.padrao.model.entidades.Agencia;
 import backend.sec.padrao.model.entidades.Empresa;
 
 @Entity
+@Table(name = "financiamento", schema = "fco")
 public class Financiamento implements Serializable {
 
 	private static final long serialVersionUID = 1L;

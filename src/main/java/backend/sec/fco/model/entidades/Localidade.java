@@ -8,10 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import backend.sec.padrao.model.entidades.Cidade;
 
 @Entity
+@Table(name = "localidade", schema = "fco")
 public class Localidade {
 
 	@Id

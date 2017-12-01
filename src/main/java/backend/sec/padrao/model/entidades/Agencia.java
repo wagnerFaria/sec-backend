@@ -12,10 +12,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import backend.sec.fco.model.entidades.Financiamento;
 
 @Entity
+@Table(name = "agencia", schema = "padrao")
 public class Agencia implements Serializable {
 
 	private static final long serialVersionUID = 1L;

@@ -6,8 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "financ_has_item_financ", schema = "fco")
 public class FinanciamentoHasItemFinanciado implements Serializable {
 
 	private static final long serialVersionUID = 1L;

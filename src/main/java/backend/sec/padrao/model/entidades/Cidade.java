@@ -2,6 +2,7 @@ package backend.sec.padrao.model.entidades;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -9,8 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "cidade", schema = "padrao")
 public class Cidade implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -22,6 +25,7 @@ public class Cidade implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "estado_id")
 	private Estado estado;
+	@Column(name = "codigo_ibge")
 	private String codigoIbge;
 
 	public Cidade() {

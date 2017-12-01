@@ -9,8 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "fonte_recursos", schema = "fco")
 public class FonteRecurso implements Serializable {
 
 	private static final long serialVersionUID = 1L;

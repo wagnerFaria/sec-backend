@@ -12,8 +12,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "item_financiado", schema = "fco")
 public class ItemFinanciado implements Serializable {
 
 	private static final long serialVersionUID = 1L;
