@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import backend.sec.fco.model.entidades.Financiamento;
 
 @Entity
@@ -33,6 +35,7 @@ public class Agencia implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "cidade_id")
 	private Cidade cidade;
+	@JsonBackReference
 	@OneToMany(mappedBy = "agencia")
 	private List<Financiamento> listaFinanciamento = new ArrayList<>();
 
