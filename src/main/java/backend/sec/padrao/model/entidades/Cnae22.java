@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "cnae22", schema = "padrao")
 public class Cnae22 implements Serializable {
@@ -51,6 +53,7 @@ public class Cnae22 implements Serializable {
 	@NotNull
 	@Column(name = "desc_subclasse", nullable = false)
 	private String descSubclasse;
+	@JsonBackReference
 	@OneToMany(mappedBy = "cnae")
 	private List<EmpresaHasCnae> listaEmpresaHasCnae = new ArrayList<>();
 

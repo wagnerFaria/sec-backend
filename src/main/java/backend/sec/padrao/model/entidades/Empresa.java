@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.br.CNPJ;
+
 @Entity
 @Table(name = "empresa", schema = "padrao")
 public class Empresa implements Serializable {
@@ -23,6 +25,7 @@ public class Empresa implements Serializable {
 	private String nomeFantasia;
 	@OneToMany(mappedBy = "empresa")
 	private List<EmpresaHasCnae> listaEmpresaHasCnae = new ArrayList<>();
+	@CNPJ
 	private String cnpj;
 	private boolean ativo = true;
 
