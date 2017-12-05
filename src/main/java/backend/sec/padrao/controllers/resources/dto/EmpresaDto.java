@@ -1,40 +1,25 @@
-package backend.sec.padrao.model.entidades;
+package backend.sec.padrao.controllers.resources.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-import org.hibernate.validator.constraints.br.CNPJ;
-
-@Entity
-@Table(name = "empresa", schema = "padrao")
-public class Empresa implements Serializable {
+public class EmpresaDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private Long id;
 	private String razaoSocial;
 	private String nomeFantasia;
-	@OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-	private List<EmpresaHasCnae> listaEmpresaHasCnae = new ArrayList<>();
-	@CNPJ
 	private String cnpj;
-	private boolean ativo = true;
+	private List<EmpresaHasCnaeDto> listaCnae22 = new ArrayList<>();
 
-	public Empresa() {
+	public EmpresaDto() {
+		super();
 	}
 
-	public Empresa(Long id, String razaoSocial, String nomeFantasia, String cnpj) {
+	public EmpresaDto(Long id, String razaoSocial, String nomeFantasia, String cnpj) {
+		super();
 		this.id = id;
 		this.razaoSocial = razaoSocial;
 		this.nomeFantasia = nomeFantasia;
@@ -65,14 +50,6 @@ public class Empresa implements Serializable {
 		this.nomeFantasia = nomeFantasia;
 	}
 
-	public List<EmpresaHasCnae> getListaEmpresaHasCnae() {
-		return listaEmpresaHasCnae;
-	}
-
-	public void setListaEmpresaHasCnae(List<EmpresaHasCnae> listaEmpresaHasCnae) {
-		this.listaEmpresaHasCnae = listaEmpresaHasCnae;
-	}
-
 	public String getCnpj() {
 		return cnpj;
 	}
@@ -81,12 +58,12 @@ public class Empresa implements Serializable {
 		this.cnpj = cnpj;
 	}
 
-	public boolean isAtivo() {
-		return ativo;
+	public List<EmpresaHasCnaeDto> getListaCnae22() {
+		return listaCnae22;
 	}
 
-	public void setAtivo(boolean ativo) {
-		this.ativo = ativo;
+	public void setListaCnae22(List<EmpresaHasCnaeDto> listaCnae22) {
+		this.listaCnae22 = listaCnae22;
 	}
 
 	@Override
@@ -105,7 +82,7 @@ public class Empresa implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Empresa other = (Empresa) obj;
+		EmpresaDto other = (EmpresaDto) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -116,7 +93,7 @@ public class Empresa implements Serializable {
 
 	@Override
 	public String toString() {
-		return "backend.sec.padrao.model.entidades.Empresa [id=" + id + "]";
+		return "backend.sec.padrao.controllers.resources.dto.EmpresaDto [id=" + id + "]";
 	}
 
 }

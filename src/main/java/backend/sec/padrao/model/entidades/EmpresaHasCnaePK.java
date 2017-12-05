@@ -21,6 +21,9 @@ public class EmpresaHasCnaePK implements Serializable {
 	@Column(name = "cnae_id", nullable = false)
 	private long cnaeId;
 
+	public EmpresaHasCnaePK() {
+	}
+
 	public EmpresaHasCnaePK(long empresaId, long cnaeId) {
 		this.empresaId = empresaId;
 		this.cnaeId = cnaeId;

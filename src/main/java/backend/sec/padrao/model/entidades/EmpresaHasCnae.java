@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "empresa_has_cnae", schema = "padrao")
 public class EmpresaHasCnae implements Serializable {
@@ -17,23 +19,22 @@ public class EmpresaHasCnae implements Serializable {
 
 	@EmbeddedId
 	private EmpresaHasCnaePK empresaHasCnaePK;
+	@JsonBackReference
 	@JoinColumn(name = "empresa_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
 	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	private Empresa empresa;
 	@JoinColumn(name = "cnae_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
 	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	private Cnae22 cnae;
-	private Boolean cnaePrincipal;
+	private Boolean cnaePrincipal = false;
 	private boolean ativo = true;
 
 	public EmpresaHasCnae() {
 	}
 
-	public EmpresaHasCnae(EmpresaHasCnaePK empresaHasCnaePK, Empresa empresa, Cnae22 cnae, Boolean cnaePrincipal) {
+	public EmpresaHasCnae(EmpresaHasCnaePK empresaHasCnaePK) {
+		super();
 		this.empresaHasCnaePK = empresaHasCnaePK;
-		this.empresa = empresa;
-		this.cnae = cnae;
-		this.cnaePrincipal = cnaePrincipal;
 	}
 
 	public EmpresaHasCnaePK getEmpresaHasCnaePK() {
