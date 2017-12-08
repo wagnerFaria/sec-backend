@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "fonte_recursos", schema = "fco")
 public class FonteRecurso implements Serializable {
@@ -21,6 +23,7 @@ public class FonteRecurso implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
+	@JsonBackReference
 	@OneToMany(mappedBy = "fonteRecurso")
 	private List<Financiamento> listaFinanciamento = new ArrayList<>();
 

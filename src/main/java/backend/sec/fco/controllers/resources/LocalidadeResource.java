@@ -1,7 +1,6 @@
 package backend.sec.fco.controllers.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,10 +37,6 @@ public class LocalidadeResource {
 
 	@DeleteMapping(value = "deletarLocalidade/{idLocalidade}")
 	public ResponseEntity<?> deletarLocalidade(@PathVariable Long idLocalidade) {
-		if (localidadeService.deletarLocalidade(idLocalidade)) {
-			return ResponseEntity.ok(true);
-		} else {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(false);
-		}
+		return ResponseEntity.ok(localidadeService.deletarLocalidade(idLocalidade));
 	}
 }
