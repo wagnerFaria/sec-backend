@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "financ_has_item_financ", schema = "fco")
 public class FinanciamentoHasItemFinanciado implements Serializable {
@@ -16,8 +18,9 @@ public class FinanciamentoHasItemFinanciado implements Serializable {
 
 	@EmbeddedId
 	private FinanciamentoHasItemFinanciadoPK financiamentoHasItemFinanciadoPK;
+	@JsonBackReference
 	@JoinColumn(name = "financiamento_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-	@ManyToOne(optional = false, fetch = FetchType.EAGER)
+	@ManyToOne(optional = false)
 	private Financiamento financiamento;
 	@JoinColumn(name = "itemFinanciado_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
 	@ManyToOne(optional = false, fetch = FetchType.EAGER)

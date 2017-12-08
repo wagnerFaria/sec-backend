@@ -40,12 +40,9 @@ public class EmpresaResource {
 		return ResponseEntity.ok(EmpresaDtoConverter.empresaToDto(obj));
 	}
 
-	@DeleteMapping(value = "/deletar")
-	public ResponseEntity<?> deletarEmpresa(@PathVariable Long empresaId) {
-		if (empresaService.deletarEmpresa(empresaId)) {
-			return ResponseEntity.ok(true);
-		} else {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(false);
-		}
+	@DeleteMapping(value = "/deletarEmpresa/{idEmpresa}")
+	public ResponseEntity<?> deletarEmpresa(@PathVariable Long idEmpresa) {
+		empresaService.deletarEmpresa(idEmpresa);
+		return ResponseEntity.ok(true);
 	}
 }

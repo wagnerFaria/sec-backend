@@ -21,7 +21,7 @@ public class EmpresaHasCnae implements Serializable {
 	private EmpresaHasCnaePK empresaHasCnaePK;
 	@JsonBackReference
 	@JoinColumn(name = "empresa_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-	@ManyToOne(optional = false, fetch = FetchType.EAGER)
+	@ManyToOne(optional = false)
 	private Empresa empresa;
 	@JoinColumn(name = "cnae_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
 	@ManyToOne(optional = false, fetch = FetchType.EAGER)

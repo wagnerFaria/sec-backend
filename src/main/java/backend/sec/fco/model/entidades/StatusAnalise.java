@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "status_analise", schema = "fco")
 public class StatusAnalise implements Serializable {
@@ -24,6 +26,7 @@ public class StatusAnalise implements Serializable {
 	private String status;
 	@Column(nullable = true)
 	private String descricaoStatus;
+	@JsonBackReference
 	@OneToMany(mappedBy = "statusAnalise")
 	private List<Financiamento> listaFinanciamento = new ArrayList<>();
 

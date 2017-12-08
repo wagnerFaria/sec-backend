@@ -43,12 +43,7 @@ public class EmpresaService {
 		return obj;
 	}
 
-	public boolean deletarEmpresa(Long empresaId) {
-		try {
-			empresaRepository.delete(empresaId);
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
+	public void deletarEmpresa(Long empresaId) {
+		empresaRepository.delete(empresaId);
 	}
 }

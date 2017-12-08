@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "tipo_fco", schema = "fco")
 public class TipoFco implements Serializable {
@@ -23,6 +25,7 @@ public class TipoFco implements Serializable {
 	private String tipo;
 	@Column(nullable = true)
 	private String descricao;
+	@JsonBackReference
 	@OneToMany(mappedBy = "tipoFco")
 	private List<Financiamento> listaFinanciamento = new ArrayList<>();
 

@@ -25,7 +25,7 @@ public class Empresa implements Serializable {
 	private Long id;
 	private String razaoSocial;
 	private String nomeFantasia;
-	@OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<EmpresaHasCnae> listaEmpresaHasCnae = new ArrayList<>();
 	@CNPJ
 	private String cnpj;
