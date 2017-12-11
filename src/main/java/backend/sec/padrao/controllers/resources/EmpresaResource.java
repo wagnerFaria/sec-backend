@@ -1,8 +1,8 @@
 package backend.sec.padrao.controllers.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,23 +24,27 @@ public class EmpresaResource {
 	private EmpresaService empresaService;
 
 	@GetMapping(value = "/findById/{idEmpresa}")
+	@PreAuthorize("hasAnyRole('ADMIN')")
 	public ResponseEntity<?> findById(@PathVariable Long idEmpresa) {
 		Empresa obj = empresaService.findById(idEmpresa);
 		return ResponseEntity.ok(EmpresaDtoConverter.empresaToDto(obj));
 	}
 
 	@GetMapping(value = "/findAll")
+	@PreAuthorize("hasAnyRole('ADMIN')")
 	public ResponseEntity<?> findAll() {
 		return ResponseEntity.ok(EmpresaDtoConverter.empresaListToDtoList(empresaService.findAll()));
 	}
 
 	@PostMapping(value = "/salvarEmpresa")
+	@PreAuthorize("hasAnyRole('ADMIN')")
 	public ResponseEntity<?> salvarEmpresa(@RequestBody EmpresaDto empresaDto) {
 		Empresa obj = empresaService.salvarEmpresa(EmpresaDtoConverter.dtoToEmpresa(empresaDto));
 		return ResponseEntity.ok(EmpresaDtoConverter.empresaToDto(obj));
 	}
 
 	@DeleteMapping(value = "/deletarEmpresa/{idEmpresa}")
+	@PreAuthorize("hasAnyRole('ADMIN')")
 	public ResponseEntity<?> deletarEmpresa(@PathVariable Long idEmpresa) {
 		empresaService.deletarEmpresa(idEmpresa);
 		return ResponseEntity.ok(true);
