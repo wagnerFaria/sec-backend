@@ -16,7 +16,7 @@ import backend.sec.padrao.model.entidades.Cnae22;
 import backend.sec.padrao.model.services.Cnae22Service;
 
 @RestController
-@RequestMapping(value = "/cnae")
+@RequestMapping(value = "/padrao/cnae")
 public class Cnae22Resource {
 
 	@Autowired

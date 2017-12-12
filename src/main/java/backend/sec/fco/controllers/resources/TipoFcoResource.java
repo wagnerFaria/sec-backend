@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import backend.sec.fco.model.services.TipoFcoService;
 
 @RestController
-@RequestMapping(value = "/tipoFco")
+@RequestMapping(value = "/fco/tipoFco")
 public class TipoFcoResource {
 
 	@Autowired

@@ -15,7 +15,7 @@ import backend.sec.fco.model.security.services.impl.UsuarioServiceImpl;
 import backend.sec.padrao.model.utils.SenhaUtils;
 
 @RestController
-@RequestMapping(value = "/auth/usuario")
+@RequestMapping(value = "/auth/fco/usuario")
 public class UsuarioResource {
 
 	@Autowired

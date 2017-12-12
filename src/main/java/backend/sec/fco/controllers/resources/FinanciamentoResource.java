@@ -16,7 +16,7 @@ import backend.sec.fco.controllers.resources.dto.FinanciamentoDtoConverter;
 import backend.sec.fco.model.services.FinanciamentoService;
 
 @RestController
-@RequestMapping(value = "/financiamento")
+@RequestMapping(value = "/fco/financiamento")
 public class FinanciamentoResource {
 
 	@Autowired

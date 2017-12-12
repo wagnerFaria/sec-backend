@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import backend.sec.fco.model.services.TipoItemService;
 
 @RestController
-@RequestMapping(value = "/tipoItem")
+@RequestMapping(value = "/fco/tipoItem")
 public class TipoItemResource {
 
 	@Autowired

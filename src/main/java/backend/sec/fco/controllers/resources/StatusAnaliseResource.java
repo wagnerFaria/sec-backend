@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import backend.sec.fco.model.services.StatusAnaliseService;
 
 @RestController
-@RequestMapping(value = "/statusAnalise")
+@RequestMapping(value = "/fco/statusAnalise")
 public class StatusAnaliseResource {
 
 	@Autowired

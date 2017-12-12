@@ -14,7 +14,7 @@ import backend.sec.padrao.model.entidades.Cidade;
 import backend.sec.padrao.model.services.CidadeService;
 
 @RestController
-@RequestMapping(value = "/cidade")
+@RequestMapping(value = "/padrao/cidade")
 public class CidadeResource {
 
 	@Autowired

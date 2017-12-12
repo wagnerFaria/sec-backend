@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -25,9 +26,11 @@ public class ItemFinanciado implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotNull(message = "Descrição não pode ser nulo")
 	private String descricao;
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "tipo_itens_id")
+	@NotNull(message = "Tipo do item não pode ser nulo")
 	private TipoItem tipoItens;
 
 	@JsonBackReference

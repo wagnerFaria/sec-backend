@@ -14,7 +14,7 @@ import backend.sec.padrao.model.entidades.Banco;
 import backend.sec.padrao.model.services.BancoService;
 
 @RestController
-@RequestMapping(value = "/banco")
+@RequestMapping(value = "/padrao/banco")
 public class BancoResource {
 
 	@Autowired

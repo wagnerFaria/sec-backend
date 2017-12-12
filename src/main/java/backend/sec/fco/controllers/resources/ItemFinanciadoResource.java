@@ -15,7 +15,7 @@ import backend.sec.fco.model.entidades.ItemFinanciado;
 import backend.sec.fco.model.services.ItemFinanciadoService;
 
 @RestController
-@RequestMapping(value = "/itemFinanciado")
+@RequestMapping(value = "/fco/itemFinanciado")
 public class ItemFinanciadoResource {
 
 	@Autowired

@@ -16,7 +16,7 @@ import backend.sec.padrao.model.entidades.Agencia;
 import backend.sec.padrao.model.services.AgenciaService;
 
 @RestController
-@RequestMapping(value = "/agencia")
+@RequestMapping(value = "/padrao/agencia")
 public class AgenciaResource {
 
 	@Autowired

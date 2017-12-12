@@ -29,7 +29,7 @@ import backend.sec.fco.model.security.dto.TokenDto;
 import backend.sec.padrao.model.security.utils.JwtTokenUtil;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/auth/fco")
 @CrossOrigin(origins = "*")
 public class AuthenticationController {
 

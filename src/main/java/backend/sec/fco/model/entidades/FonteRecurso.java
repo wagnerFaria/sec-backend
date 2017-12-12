@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -22,6 +23,7 @@ public class FonteRecurso implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotNull(message = "Nome da fonte de recurso não pode ser nulo")
 	private String nome;
 	@JsonBackReference
 	@OneToMany(mappedBy = "fonteRecurso")

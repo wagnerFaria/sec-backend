@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -27,6 +28,7 @@ public class Agencia implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotNull(message = "Número da Agência não pode ser nulo")
 	private String numeroAgencia;
 	private String descricao;
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -34,6 +36,7 @@ public class Agencia implements Serializable {
 	private Banco banco;
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "cidade_id")
+	@NotNull(message = "Agência deve pertencer a uma cidade")
 	private Cidade cidade;
 	@JsonBackReference
 	@OneToMany(mappedBy = "agencia")

@@ -17,7 +17,7 @@ import backend.sec.padrao.model.entidades.Empresa;
 import backend.sec.padrao.model.services.EmpresaService;
 
 @RestController
-@RequestMapping(value = "/empresa")
+@RequestMapping(value = "/padrao/empresa")
 public class EmpresaResource {
 
 	@Autowired

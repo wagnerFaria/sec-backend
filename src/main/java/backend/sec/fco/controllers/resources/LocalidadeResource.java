@@ -15,7 +15,7 @@ import backend.sec.fco.model.entidades.Localidade;
 import backend.sec.fco.model.services.LocalidadeService;
 
 @RestController
-@RequestMapping(value = "/localidade")
+@RequestMapping(value = "/fco/localidade")
 public class LocalidadeResource {
 
 	@Autowired

@@ -15,7 +15,7 @@ import backend.sec.fco.model.entidades.FonteRecurso;
 import backend.sec.fco.model.services.FonteRecursoService;
 
 @RestController
-@RequestMapping(value = "/fonteRecurso")
+@RequestMapping(value = "/fco/fonteRecurso")
 public class FonteRecursoResource {
 
 	@Autowired

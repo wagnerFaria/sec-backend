@@ -14,7 +14,7 @@ import backend.sec.padrao.model.entidades.Estado;
 import backend.sec.padrao.model.services.EstadoService;
 
 @RestController
-@RequestMapping(value = "/estado")
+@RequestMapping(value = "/padrao/estado")
 public class EstadoResource {
 
 	@Autowired

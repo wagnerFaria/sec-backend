@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import backend.sec.padrao.model.entidades.Cidade;
 
@@ -19,8 +20,11 @@ public class Localidade {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotNull(message = "Logradouro não pode ser nulo")
 	private String logradouro;
+	@NotNull(message = "CEP não pode ser nulo")
 	private String cep;
+	@NotNull(message = "Bairro não pode ser nulo")
 	private String bairro;
 	private String numero;
 	@Column(nullable = true)
@@ -28,6 +32,7 @@ public class Localidade {
 	private String descricao;
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "cidade_id")
+	@NotNull(message = "Cidade não pode ser nulo")
 	private Cidade cidade;
 
 	public Localidade() {

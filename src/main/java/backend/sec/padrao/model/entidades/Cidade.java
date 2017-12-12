@@ -11,6 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Table(name = "cidade", schema = "padrao")
@@ -21,9 +24,12 @@ public class Cidade implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotNull(message = "Nome de cidade não pode ser nulo")
+	@Length(min = 4, message = "Nome não pode ter menos de 4 caracteres")
 	private String nome;
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "estado_id")
+	@NotNull(message = "Estado da cidade não pode ser nulo")
 	private Estado estado;
 	@Column(name = "codigo_ibge")
 	private String codigoIbge;
